@@ -6,12 +6,12 @@ actual fun Month.getDisplayName(
 	short: Boolean,
 	locale: Locale
 ): String {
-	TODO("Not yet implemented")
+	return ""
 }
 
 actual fun DayOfWeek.getDisplayName(
 	narrow: Boolean,
 	locale: Locale
 ): String {
-	TODO("Not yet implemented")
+	return ""
 }

@@ -168,7 +168,7 @@ private fun AppNavHost(
                 },
             )
         }
-//        verticallyAnimatedComposable(Page.Example3.name) { Example3Page { navController.popBackStack() } }
+        verticallyAnimatedComposable(Page.Example3.name) { Example3Page { navController.popBackStack() } }
 //        horizontallyAnimatedComposable(Page.Example4.name) { Example4Page() }
 //        horizontallyAnimatedComposable(Page.Example5.name) { Example5Page { navController.popBackStack() } }
 //        horizontallyAnimatedComposable(Page.Example6.name) { Example6Page() }
