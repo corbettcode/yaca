@@ -15,13 +15,22 @@ plugins {
     alias(libs.plugins.kotlinx.serialization)
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+kotlin {
+    jvmToolchain(21)
+}
+
 kotlin {
     androidTarget {
         //https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-test.html
         instrumentedTestVariant.sourceSetTree.set(KotlinSourceSetTree.test)
     }
 
-    jvm("desktop")
+    jvm()
 
     wasmJs {
         browser()
@@ -61,8 +70,10 @@ kotlin {
             implementation(libs.multiplatformSettings)
             implementation(libs.kotlinx.datetime)
 
-            implementation(libs.kalendar)
-            implementation(libs.kalendar.foundation)
+            implementation(libs.jetbrains.compose.navigation)
+            implementation(libs.jetbrains.material.icons)
+
+            implementation(libs.kizitonwose.calendar)
         }
 
         commonTest.dependencies {
@@ -93,7 +104,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.corbett.yaca"
+    namespace = "com.corbettcode.yaca"
     compileSdk = 35
 
     defaultConfig {
@@ -139,4 +150,9 @@ compose.desktop {
 
 tasks.withType<ComposeHotRun>().configureEach {
     mainClass = "MainKt"
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }

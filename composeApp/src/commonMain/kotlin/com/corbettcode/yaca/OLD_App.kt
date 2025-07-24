@@ -1,38 +1,26 @@
-package com.corbett.yaca
+package com.corbettcode.yaca
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.runtime.Composable
+import androidx.compose.animation.core.*
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import com.himanshoe.kalendar.Kalendar
-import com.himanshoe.kalendar.KalendarType
-import com.himanshoe.kalendar.foundation.action.OnDaySelectionAction
-import com.himanshoe.kalendar.foundation.event.KalendarEvents
-import kotlinx.datetime.Clock
-import kotlinx.datetime.DayOfWeek.SUNDAY
-import kotlinx.datetime.TimeZone
-import kotlinx.datetime.todayIn
-import kotlin.time.ExperimentalTime
+import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.unit.dp
+import yaca.composeapp.generated.resources.*
+import com.corbettcode.yaca.theme.AppTheme
+import com.corbettcode.yaca.theme.LocalThemeIsDark
+import kotlinx.coroutines.isActive
+import org.jetbrains.compose.resources.Font
+import org.jetbrains.compose.resources.stringResource
+import org.jetbrains.compose.resources.vectorResource
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
-@OptIn(ExperimentalTime::class)
-@Composable
-fun App() {
-    Column(modifier = Modifier.wrapContentSize().background(Color.LightGray)) {
-        Kalendar(
-            selectedDate = Clock.System.todayIn(TimeZone.currentSystemDefault()),
-            modifier = Modifier.fillMaxWidth(),
-            events = KalendarEvents(),
-            startDayOfWeek = SUNDAY,
-            kalendarType = KalendarType.Aerial,
-            onDaySelectionAction = OnDaySelectionAction.Range { date, events ->
-                println("Selected Date: $date with events: $events")
-            },
-        )
-    }
-}
 //@Preview
 //@Composable
 //internal fun App() = AppTheme {

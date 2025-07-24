@@ -1,4 +1,4 @@
-package com.corbett.yaca.theme
+package com.corbettcode.yaca.theme
 
 import android.app.Activity
 import androidx.compose.runtime.Composable

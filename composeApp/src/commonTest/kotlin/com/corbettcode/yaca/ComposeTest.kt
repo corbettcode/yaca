@@ -1,4 +1,4 @@
-package com.corbett.yaca
+package com.corbettcode.yaca
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Button

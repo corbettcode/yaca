@@ -1,4 +1,4 @@
-package com.corbett.yaca.theme
+package com.corbettcode.yaca.theme
 
 import androidx.compose.ui.graphics.Color
 
