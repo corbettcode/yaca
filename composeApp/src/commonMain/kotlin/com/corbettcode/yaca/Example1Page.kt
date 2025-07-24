@@ -37,12 +37,15 @@ import kotlin.time.ExperimentalTime
 
 @OptIn(ExperimentalTime::class)
 @Composable
-fun Example1Page(adjacentMonths: Int = 500) {
+fun Example1Page(
+    adjacentMonths: Int = 500
+) {
     val currentMonth = remember { YearMonth.now() }
     val startMonth = remember { currentMonth.minusMonths(adjacentMonths) }
     val endMonth = remember { currentMonth.plusMonths(adjacentMonths) }
     val selections = remember { mutableStateListOf<CalendarDay>() }
     val daysOfWeek = remember { daysOfWeek() }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -57,8 +60,13 @@ fun Example1Page(adjacentMonths: Int = 500) {
         )
         val coroutineScope = rememberCoroutineScope()
         val visibleMonth = rememberFirstMostVisibleMonth(state, viewportPercent = 90f)
+
         SimpleCalendarTitle(
-            modifier = Modifier.padding(vertical = 10.dp, horizontal = 8.dp),
+            modifier = Modifier
+                .padding(
+                    vertical = 10.dp,
+                    horizontal = 8.dp
+                ),
             currentMonth = visibleMonth.yearMonth,
             goToPrevious = {
                 coroutineScope.launch {
@@ -75,7 +83,10 @@ fun Example1Page(adjacentMonths: Int = 500) {
             modifier = Modifier.testTag("Calendar"),
             state = state,
             dayContent = { day ->
-                Day(day, isSelected = selections.contains(day)) { clicked ->
+                Day(
+                    day,
+                    isSelected = selections.contains(day)
+                ) { clicked ->
                     if (selections.contains(clicked)) {
                         selections.remove(clicked)
                     } else {
@@ -91,7 +102,9 @@ fun Example1Page(adjacentMonths: Int = 500) {
 }
 
 @Composable
-private fun MonthHeader(daysOfWeek: List<DayOfWeek>) {
+private fun MonthHeader(
+    daysOfWeek: List<DayOfWeek>
+) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -110,7 +123,11 @@ private fun MonthHeader(daysOfWeek: List<DayOfWeek>) {
 }
 
 @Composable
-private fun Day(day: CalendarDay, isSelected: Boolean, onClick: (CalendarDay) -> Unit) {
+private fun Day(
+    day: CalendarDay,
+    isSelected: Boolean,
+    onClick: (CalendarDay) -> Unit
+) {
     Box(
         modifier = Modifier
             .aspectRatio(1f) // This is important for square-sizing!
