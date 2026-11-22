@@ -49,7 +49,7 @@ import com.kizitonwose.calendar.core.plusMonths
 import kotlinx.datetime.DayOfWeek
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.YearMonth
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import kotlin.time.ExperimentalTime
 
 private val primaryColor = Color.Black.copy(alpha = 0.9f)
@@ -152,7 +152,7 @@ private fun Day(
         contentAlignment = Alignment.Center,
     ) {
         Text(
-            text = day.date.dayOfMonth.toString(),
+            text = day.date.day.toString(),
             color = textColor,
             fontSize = 16.sp,
             fontWeight = FontWeight.Medium,

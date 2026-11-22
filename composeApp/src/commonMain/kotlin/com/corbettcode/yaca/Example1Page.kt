@@ -32,7 +32,7 @@ import com.kizitonwose.calendar.core.plusMonths
 import kotlinx.coroutines.launch
 import kotlinx.datetime.DayOfWeek
 import kotlinx.datetime.YearMonth
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import kotlin.time.ExperimentalTime
 
 @OptIn(ExperimentalTime::class)
@@ -149,7 +149,7 @@ private fun Day(
             DayPosition.InDate, DayPosition.OutDate -> Colors.example4GrayPast
         }
         Text(
-            text = day.date.dayOfMonth.toString(),
+            text = day.date.day.toString(),
             color = textColor,
             fontSize = 14.sp,
         )

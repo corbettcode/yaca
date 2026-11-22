@@ -53,7 +53,7 @@ import com.kizitonwose.calendar.core.plusMonths
 import kotlinx.coroutines.launch
 import kotlinx.datetime.DayOfWeek
 import kotlinx.datetime.YearMonth
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import kotlin.time.ExperimentalTime
 
 private val flights = generateFlights().groupBy { it.time.date }
@@ -194,7 +194,7 @@ private fun Day(
             modifier = Modifier
                 .align(Alignment.TopEnd)
                 .padding(top = 3.dp, end = 4.dp),
-            text = day.date.dayOfMonth.toString(),
+            text = day.date.day.toString(),
             color = textColor,
             fontSize = 12.sp,
         )
