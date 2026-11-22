@@ -1,6 +1,9 @@
+package com.corbettcode.yaca
+
 // Adapted from the kizitonwose/Calendar compose-multiplatform sample (2.10.1).
 // Copyright (c) 2019 Kizito Nwose. Licensed under the MIT License.
 
+import NavigationIcon
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -32,6 +35,9 @@ import com.kizitonwose.calendar.core.plusDays
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.format.Padding
 import androidx.compose.ui.tooling.preview.Preview
+import displayText
+import getWeekPageTitle
+import rememberFirstVisibleWeekAfterScroll
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

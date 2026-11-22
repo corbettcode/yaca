@@ -1,6 +1,9 @@
+package com.corbettcode.yaca
+
 // Adapted from the kizitonwose/Calendar compose-multiplatform sample (2.10.1).
 // Copyright (c) 2019 Kizito Nwose. Licensed under the MIT License.
 
+import SimpleCalendarTitle
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -55,6 +58,14 @@ import kotlinx.datetime.DayOfWeek
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.yearMonth
 import androidx.compose.ui.tooling.preview.Preview
+import applyScaffoldBottomPadding
+import applyScaffoldHorizontalPaddings
+import applyScaffoldTopPadding
+import clickable
+import displayText
+import next
+import previous
+import rememberFirstVisibleMonthAfterScroll
 
 @Composable
 fun Example8Page(close: () -> Unit = {}) {

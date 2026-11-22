@@ -1,6 +1,9 @@
+package com.corbettcode.yaca
+
 // Adapted from the kizitonwose/Calendar compose-multiplatform sample (2.10.1).
 // Copyright (c) 2019 Kizito Nwose. Licensed under the MIT License.
 
+import LocalScaffoldPaddingValues
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.snapping.SnapPosition
@@ -51,6 +54,10 @@ import com.kizitonwose.calendar.core.plusYears
 import com.kizitonwose.calendar.core.yearsUntil
 import kotlinx.coroutines.launch
 import androidx.compose.ui.tooling.preview.Preview
+import animateScrollAndCenterItem
+import clickable
+import displayText
+import rememberFirstVisibleYearAfterScroll
 import kotlin.math.abs
 
 @Composable
