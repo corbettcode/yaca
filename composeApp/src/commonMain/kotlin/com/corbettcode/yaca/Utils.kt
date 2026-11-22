@@ -5,10 +5,9 @@ import androidx.compose.foundation.gestures.animateScrollBy
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
-import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.shape.CircleShape
@@ -80,8 +79,7 @@ fun NavigationIcon(
 ) {
     Box(
         modifier = Modifier
-            .fillMaxHeight()
-            .aspectRatio(1f)
+            .size(48.dp)
             .padding(8.dp)
             .clip(shape = CircleShape)
             .clickable(role = Role.Button, onClick = onBackClick),
